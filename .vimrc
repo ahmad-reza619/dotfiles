@@ -10,6 +10,7 @@ set smartcase
 set nu
 set relativenumber
 set incsearch
+set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
 
 " Plugin here
 call plug#begin("~/.vim/plugged")
@@ -62,6 +63,25 @@ nnoremap <C-p> :GFiles<CR>
 nnoremap <leader><leader> :NERDTreeToggle<CR>
 nmap t :tabnew<CR>
 nmap <leader>x :q<CR>
-nmap J gT
-nmap K gt
+nmap H gT
+nmap L gt
+nmap <leader>gf :diffget //3<CR>
+nmap <leader>gj :diffget //2<CR>
 
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
