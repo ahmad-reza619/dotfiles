@@ -2,11 +2,15 @@
 	name = Ahmad Reza
 	email = hungry.dev39@gmail.com
 
+[core]
+sshCommand = "ssh -i ~/.ssh/ahmad-reza619"
+
+[includeIf "gitdir:~/Developments/moladin/"]
+    path = ~/Developments/moladin/.gitconfig
+
 [github]
 user = "ahmad-reza619"
  
-[core]
-sshCommand = "ssh -i ~/.ssh/ahmad-reza619"
 
 [init]
 	defaultBranch = main
