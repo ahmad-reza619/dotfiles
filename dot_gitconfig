@@ -1,0 +1,12 @@
+[user]
+	name = Ahmad Reza
+	email = hungry.dev39@gmail.com
+
+[github]
+user = "ahmad-reza619"
+ 
+[core]
+sshCommand = "ssh -i ~/.ssh/ahmad-reza619"
+
+[init]
+	defaultBranch = main
