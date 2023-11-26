@@ -85,8 +85,8 @@ font:
 
   # The italic font face
   italic:
-    family: "Fira Code"
-    style: Regular
+    family: "Hack Nerd Font"
+    style: Italic
     # style: "Light Oblique"
     # family: "Fira Code"
     # family: "Source Code Pro"
